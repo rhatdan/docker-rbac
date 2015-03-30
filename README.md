@@ -5,7 +5,7 @@ an authorization/authentication database into docker for people who can communic
 
 I see that we can break this into three different realms of control to start.
 
-1 Define existing containers and allow a user "admin" control over those containers only, preventing the user for escallating controls and touching other existing containers.
+1. Define existing containers and allow a user "admin" control over those containers only, preventing the user for escallating controls and touching other existing containers.
 
 For containers that a user is allowed to "manage"
 docker start/stop/exec/attach/inspect/export/kill/logs/pause/unpause/restart//save/stats/top/wait
