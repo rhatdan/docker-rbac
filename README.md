@@ -1,4 +1,4 @@
-# Definining Privilege operation on Docker
+# Defining Privilege operation on Docker
 
 We have begun an effort to describe Role Based Access Control in Docker.  The goal is to build 
 an authorization/authentication database into docker for people who can communicate with the docker daemon.  Currently if you can communicate with the docker daemon you can gain full control over docker and the server machine that is running docker.  
@@ -6,7 +6,7 @@ an authorization/authentication database into docker for people who can communic
 I see that we can break this into three different realms of control to start.
 
 ### 1. Give user ADMIN control over his containers.
-Define existing containers and allow a user "admin" control over those containers only, preventing the user for escallating controls and touching other existing containers.
+Define existing containers and allow a user "admin" control over those containers only, preventing the user for escalating controls and touching other existing containers.
 
 For containers that a user is allowed to "manage his containers"
 
