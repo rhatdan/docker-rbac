@@ -10,7 +10,7 @@ I see that we can break this into three different realms of control to start.
 For containers that a user is allowed to "manage"
 docker start/stop/exec/attach/inspect/export/kill/logs/pause/unpause/restart//save/stats/top/wait
 
-2. Allow a user "admin" the ability to create new "unprivileged" containers.  We have to define what it means to create an unprivileged container.  This admin would not be allowed to interact with other existing containers.  Any container he creates will automatically get added to his list.
+1. Allow a user "admin" the ability to create new "unprivileged" containers.  We have to define what it means to create an unprivileged container.  This admin would not be allowed to interact with other existing containers.  Any container he creates will automatically get added to his list.
 
 A second level would be to allow a user to run/create a container, without using any of the privileged operations.
 run/create
@@ -23,7 +23,7 @@ run/create
 --user= /Unless it is his own UID.
 Volume Mount? Maybe volume mount volumes owned by his UID?
 docker exec/attach into a container running with one of the --privileged operations
-Created containers automatically get added to the list of containers that this user/admin owns, he then gets all of the access defined in section 1.
+Created containers automatically get added to the list of containers that this user/admin owns, he then gets all of the access defined in the first.
 Remove containers that the user created/pulled
 docker rmi 
 docker rm
