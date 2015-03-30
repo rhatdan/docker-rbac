@@ -7,8 +7,9 @@ I see that we can break this into three different realms of control to start.
 
 1.Define existing containers and allow a user "admin" control over those containers only, preventing the user for escallating controls and touching other existing containers.
 
-For containers that a user is allowed to "manage"
-docker start/stop/exec/attach/inspect/export/kill/logs/pause/unpause/restart//save/stats/top/wait
+For containers that a user is allowed to "manage his containers"
+
+```docker start/stop/exec/attach/inspect/export/kill/logs/pause/unpause/restart//save/stats/top/wait```
 
 2.Allow a user "admin" the ability to create new "unprivileged" containers.  We have to define what it means to create an unprivileged container.  This admin would not be allowed to interact with other existing containers.  Any container he creates will automatically get added to his list.
 
@@ -29,7 +30,3 @@ docker rmi
 docker rm
 
 3.Full access Admin.
-
-
-
-
