@@ -8,10 +8,10 @@ model, and one we would like to replace with a more granular system.
 ## Prerequisite: Authentication
 This document will focus specifically on the Authorization side of access
 control. Authentication for Docker is already being discussed in
-docker/docker#13697 with a focus on providing Kerberos authentication GSSAPI.
-This document assumes that some authentication solution is in place already,
-and can be leveraged to identify the user performing specific operations on
-the Docker daemon.
+docker/docker#13697 with a focus on providing Kerberos authentication via
+GSSAPI. This document assumes that some authentication solution is in place
+already, and can be leveraged to identify the user performing specific
+operations on the Docker daemon.
 
 ## Authorization: General Case
 There is presently an issue for discussing authorization in the Docker daemon,
