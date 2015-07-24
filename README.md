@@ -75,7 +75,7 @@ Individual Container Permissions:
 * Access - Copy from, Exec into, Attach to, Send signals to, Diff against image
 
 ### Image Permissions
-These permissions grand users permission to act on images.
+These permissions grant users permission to act on images.
 
 Some container permissions provide overlap with image permissions. For example,
 an API call to create a container must verify that the subject making the call
@@ -135,7 +135,7 @@ The Docker Admin role has unrestricted access to the Docker daemon.
 
 ### Additional Constraints
 The permissions and roles defined above should cover most typical situations,
-but some more unusual scenarios may require additional constaints be placed on
+but some more unusual scenarios may require additional constraints be placed on
 users or roles. Suppose, for example, it was desired to make subjects in a
 Developer role unable to perform State operations on containers created by
 subjects in an Ops role, to prevent production services from being interfered
