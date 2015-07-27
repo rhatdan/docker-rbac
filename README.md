@@ -166,3 +166,26 @@ permission to access another container.
 * Subjects in the Advanced Operator role and Developer roles cannot Access,
 Delete, or modify State of containers created by subjects in the Docker Admin
 role.
+
+### Mapping Subjects to Roles
+While authorization for the Docker daemon will be implemented as a plugin,
+authentication will take place inside the daemon itself. The daemon will inform
+the authorization plugin which user is performing an action, and by what method
+that user authenticated. The actual mapping of subject to role will be performed
+by the authentication plugin, with no input from the daemon (as some
+authorization plugins may not require or use roles).
+
+The first method for doing this is via conventional Unix groups. Each role would
+have an associated group (for example, docker-developer for the Developer role).
+The authorization plugin would query the system (or the Kerberos server, in the
+case of Kerberos authentication) to identify which groups a subject is part of.
+A subject will not be allowed to be a part of multiple roles, and will refuse to
+authorize the actions of any user that is a part of two or more Unix groups
+which map to roles. No group will map to the Docker administrator role, which is
+reserved for the root user on the local system.
+
+Alternatively, subject to role mappings may be specified directly in the
+authorization plugin. Subjects (identified by name or UID) can be manually
+mapped to a role. These mappings will take precedence over the aforementioned
+Unix group mappings, which will be ignored if a subject matches one of these
+plugin-specific mappings.
